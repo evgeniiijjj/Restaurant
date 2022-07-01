@@ -7,6 +7,7 @@ public class Main {
     static int customersNum = 5;
     static int cooksNum = 2;
     static int waitersNum = 3;
+    static int restaurantOpeningHours = 5000; 
 
     public static void main(String[] args) throws InterruptedException {
         Restaurant restaurant = new Restaurant();
@@ -21,7 +22,7 @@ public class Main {
             Thread.sleep(intervalBetweenVisitors);
             restaurant.createThread(new Customer(restaurant, orderPlacingTime, mealTime), "Посетитель" + (i + 1));
         }
-        Thread.sleep(5000);
+        Thread.sleep(restaurantOpeningHours);
         System.out.println("Ресторан завершил прием посетителей");
     }
 }
